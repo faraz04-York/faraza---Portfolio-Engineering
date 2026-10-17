@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Ahmad | Civil Engineering Student & Album</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#C86D51',
+                        terracottaHover: '#B25B41',
+                        mossGreen: '#2D4A3E',
+                        mossHover: '#233B31',
+                        linenBg: '#F4F1EA',
+                        linenCard: '#FAF8F5',
+                        sageAccent: '#8A9A86',
+                        sageLight: '#E8ECE7',
+                        charcoalText: '#222523',
+                        borderWarm: '#E2DDD3',
+                        linkedinBlue: '#0A66C2'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    borderRadius: {
+                        'organic-1': '1.75rem 0.75rem 1.75rem 0.75rem',
+                        'organic-2': '0.75rem 1.75rem 0.75rem 1.75rem'
+                    },
+                    animation: {
+                        'float-slow': 'float 5s ease-in-out infinite',
+                        'float-medium': 'float 3.5s ease-in-out infinite 0.5s',
+                        'pulse-ring': 'pulseRing 2s cubic-bezier(0.45, 0, 0.55, 1) infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-6px)' }
+                        },
+                        pulseRing: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0.8' },
+                            '50%': { transform: 'scale(1.15)', opacity: '0.4' },
+                            '100%': { transform: 'scale(0.95)', opacity: '0.8' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F4F1EA;
+            color: #222523;
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(rgba(34, 37, 35, 0.22) 0.85px, transparent 0.85px);
+            background-size: 18px 18px;
+        }
+
+        .paper-grain {
+            background-color: #FAF8F5;
+            box-shadow: 0 10px 25px -5px rgba(45, 74, 62, 0.04), 0 4px 10px -2px rgba(200, 109, 81, 0.03);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes shineSweepSingleSmooth {
+            0% { background-position: 100% 0; }
+            100% { background-position: 0% 0; }
+        }
+
+        .text-shine-name {
+            display: inline-block;
+            background: linear-gradient(110deg, #222523 42%, #C86D51 48%, #FDF8EC 50%, #C86D51 52%, #222523 58%);
+            background-size: 600% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineSweepSingleSmooth 16.5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 0s;
+        }
+
+        .text-shine-sub {
+            display: inline-block;
+            background: linear-gradient(110deg, #2D4A3E 42%, #8A9A86 48%, #E6C594 50%, #8A9A86 52%, #2D4A3E 58%);
+            background-size: 600% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineSweepSingleSmooth 16.5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 3.5s;
+        }
+
+        .text-shine-sec-1 {
+            display: inline-block;
+            background: linear-gradient(110deg, #222523 42%, #C86D51 48%, #FAF8F5 50%, #C86D51 52%, #222523 58%);
+            background-size: 600% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineSweepSingleSmooth 17.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 2.1s;
+        }
+
+        .text-shine-sec-2 {
+            display: inline-block;
+            background: linear-gradient(110deg, #222523 42%, #C86D51 48%, #FAF8F5 50%, #C86D51 52%, #222523 58%);
+            background-size: 600% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineSweepSingleSmooth 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 4.8s;
+        }
+
+        .washi-tape {
+            background: rgba(232, 236, 231, 0.9);
+            border: 1px dashed #8A9A86;
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+        .washi-tape-right {
+            background: rgba(200, 109, 81, 0.15);
+            border: 1px dashed #C86D51;
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+        .photo-card:hover .washi-tape {
+            transform: rotate(-0.5deg) scale(1.05);
+        }
+        .photo-card:hover .washi-tape-right {
+            transform: rotate(0.5deg) scale(1.05);
+        }
+
+        .photo-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .photo-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 30px -10px rgba(45, 74, 62, 0.12);
+        }
+
+        .btn-magnetic {
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-magnetic:hover {
+            transform: translateY(-2px) scale(1.03);
+        }
+        .btn-magnetic:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        .category-tab.active {
+            background-color: #2D4A3E;
+            color: #FAF8F5;
+            box-shadow: 0 4px 12px rgba(45, 74, 62, 0.25);
+        }
+
+        .thumb-active {
+            border-color: #C86D51 !important;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body class="selection:bg-terracotta/20 selection:text-terracotta flex flex-col min-h-screen">
+
+    <!-- Floating Top Header Bar -->
+    <div class="fixed top-4 left-0 right-0 z-40 px-4 flex justify-center pointer-events-none">
+        <header class="pointer-events-auto bg-linenCard/90 backdrop-blur-md px-5 py-2 rounded-full border border-borderWarm shadow-md flex items-center gap-3 text-xs font-semibold text-charcoalText">
+            <span class="font-serif font-bold text-mossGreen px-2 border-r border-borderWarm">FA</span>
+            <a href="#about" class="px-3 py-1 rounded-full hover:bg-sageLight/60 transition-all">About</a>
+            <a href="#album" class="px-3 py-1 rounded-full hover:bg-sageLight/60 transition-all">Album</a>
+            <a href="#skills" class="px-3 py-1 rounded-full hover:bg-sageLight/60 transition-all">Skills</a>
+        </header>
+    </div>
+
+    <main class="flex-grow pt-20">
+        <!-- HERO SECTION -->
+        <section id="about" class="py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="paper-grain p-6 sm:p-10 rounded-organic-1 border border-borderWarm relative overflow-hidden">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                    <!-- Left Column: Name & Quick Bio -->
+                    <div class="space-y-4 max-w-2xl">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-mossGreen/10 text-mossGreen text-xs font-bold border border-mossGreen/20 animate-float-slow">
+                                <span class="w-2 h-2 rounded-full bg-mossGreen animate-pulse"></span>
+                                2nd Year Civil Engineering &bull; York University
+                            </span>
+                            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-bold border border-terracotta/20">
+                                <i class="fa-solid fa-graduation-cap text-[10px]"></i> Class of 2029
+                            </span>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <!-- Official Profile Photo Frame -->
+                            <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-terracotta/40 shadow-inner shrink-0 bg-linenBg">
+                                <img src="profile.jpeg" alt="Faraz Ahmad Profile Photo" class="w-full h-full object-cover object-center">
+                            </div>
+                            <div>
+                                <!-- Name with Metallic Shine-Through Effect -->
+                                <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-shine-name">
+                                    Faraz Ahmad
+                                </h1>
+                                <!-- Subtitle with Metallic Shine-Through Effect -->
+                                <p class="text-xs sm:text-sm font-semibold text-shine-sub mt-0.5">Civil Engineering Student &bull; North York, GTA</p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-charcoalText/85 leading-relaxed">
+                            Second-year Civil Engineering student and <strong class="text-mossGreen">Local 27 Union carpenter</strong> with <strong class="text-mossGreen">nearly 2 years of hands-on ICI site experience</strong>, combining work experience with coursework in <strong class="text-mossGreen">fluid mechanics, project management, engineering economics, and materials design</strong>. Proven problem-solver with successes in <strong class="text-terracotta">bridge design and robotics competitions at Lassonde</strong>.
+                        </p>
+
+                        <!-- Contact Badges -->
+                        <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                            <a href="https://bit.ly/farazahmad" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-full bg-sageLight text-mossGreen hover:bg-mossGreen hover:text-white font-bold transition-all flex items-center gap-1.5 border border-borderWarm">
+                                <i class="fa-brands fa-linkedin text-sm text-[#0A66C2]"></i> bit.ly/farazahmad
+                            </a>
+                            <a href="mailto:faraz04@my.yorku.ca" class="px-3 py-1.5 rounded-full bg-sageLight text-terracotta hover:bg-terracotta hover:text-white font-bold transition-all flex items-center gap-1.5 border border-borderWarm">
+                                <i class="fa-solid fa-envelope text-sm"></i> faraz04@my.yorku.ca
+                            </a>
+                            <span class="px-3 py-1.5 rounded-full bg-white text-charcoalText font-bold border border-borderWarm flex items-center gap-1.5">
+                                <i class="fa-solid fa-phone text-xs text-mossGreen"></i> 416-523-0496
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-3 pt-2">
+                            <a href="#" onclick="alert('Link to Faraz_Ahmad_Resume.pdf once added!')" class="btn-magnetic px-5 py-2.5 rounded-full bg-mossGreen text-white text-xs font-bold hover:bg-mossHover flex items-center gap-2">
+                                <i class="fa-solid fa-file-pdf text-[11px]"></i> Resume PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Quick Stats -->
+                    <div class="grid grid-cols-2 gap-3 min-w-[260px]">
+                        <div class="p-4 rounded-organic-2 bg-white border border-borderWarm shadow-sm animate-float-slow">
+                            <span class="font-mono text-2xl font-bold text-terracotta">~2 Yrs</span>
+                            <p class="text-[11px] font-medium text-charcoalText/70 mt-0.5">Field Work & ICI Safety</p>
+                        </div>
+                        <div class="p-4 rounded-organic-1 bg-white border border-borderWarm shadow-sm animate-float-medium">
+                            <span class="font-mono text-2xl font-bold text-mossGreen">5+</span>
+                            <p class="text-[11px] font-medium text-charcoalText/70 mt-0.5">Projects & Competitions</p>
+                        </div>
+                        <div class="p-4 rounded-organic-1 bg-white border border-borderWarm shadow-sm animate-float-medium">
+                            <span class="font-mono text-2xl font-bold text-mossGreen">1,000+</span>
+                            <p class="text-[11px] font-medium text-charcoalText/70 mt-0.5">Volunteer Hours</p>
+                        </div>
+                        <div class="p-4 rounded-organic-2 bg-white border border-borderWarm shadow-sm animate-float-slow">
+                            <span class="font-mono text-2xl font-bold text-terracotta">6+</span>
+                            <p class="text-[11px] font-medium text-charcoalText/70 mt-0.5">Certifications & Safety Tickets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALBUM FILTER & GRID -->
+        <section id="album" class="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-8 flex flex-col items-center">
+                <span class="font-mono text-xs font-bold uppercase tracking-widest text-terracotta block">&bull; Filterable Portfolio &bull;</span>
+                <h2 class="font-serif text-3xl font-bold text-shine-sec-1 mt-1">Activities & Experience Album</h2>
+                <p class="text-xs text-charcoalText/70 mt-1">Click any activity card to view full details and multi-image galleries!</p>
+            </div>
+
+            <!-- Category Navigation Tabs -->
+            <div class="flex items-center justify-center mb-10">
+                <div class="flex flex-wrap items-center justify-center gap-2 bg-linenCard p-2 rounded-full border border-borderWarm shadow-sm max-w-full">
+                    <button onclick="filterCategory('all')" class="category-tab active px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2" data-cat="all">
+                        <span>All Activities</span>
+                        <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-white/20">10</span>
+                    </button>
+                    <button onclick="filterCategory('projects')" class="category-tab px-4 py-2 rounded-full text-xs font-bold text-charcoalText/80 hover:text-mossGreen transition-all flex items-center gap-2" data-cat="projects">
+                        <i class="fa-solid fa-microchip text-terracotta text-[11px]"></i>
+                        <span>Projects</span>
+                        <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-sageLight text-mossGreen">3</span>
+                    </button>
+                    <button onclick="filterCategory('clubs')" class="category-tab px-4 py-2 rounded-full text-xs font-bold text-charcoalText/80 hover:text-mossGreen transition-all flex items-center gap-2" data-cat="clubs">
+                        <i class="fa-solid fa-users text-mossGreen text-[11px]"></i>
+                        <span>Clubs & Exec</span>
+                        <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-sageLight text-mossGreen">1</span>
+                    </button>
+                    <button onclick="filterCategory('competitions')" class="category-tab px-4 py-2 rounded-full text-xs font-bold text-charcoalText/80 hover:text-mossGreen transition-all flex items-center gap-2" data-cat="competitions">
+                        <i class="fa-solid fa-trophy text-terracotta text-[11px]"></i>
+                        <span>Competitions</span>
+                        <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-sageLight text-mossGreen">2</span>
+                    </button>
+                    <button onclick="filterCategory('volunteering')" class="category-tab px-4 py-2 rounded-full text-xs font-bold text-charcoalText/80 hover:text-mossGreen transition-all flex items-center gap-2" data-cat="volunteering">
+                        <i class="fa-solid fa-hand-holding-heart text-mossGreen text-[11px]"></i>
+                        <span>Volunteering</span>
+                        <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-sageLight text-mossGreen">2</span>
+                    </button>
+                    <button onclick="filterCategory('work')" class="category-tab px-4 py-2 rounded-full text-xs font-bold text-charcoalText/80 hover:text-mossGreen transition-all flex items-center gap-2" data-cat="work">
+                        <i class="fa-solid fa-hammer text-terracotta text-[11px]"></i>
+                        <span>Work Experience</span>
+                        <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-sageLight text-mossGreen">2</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Album Grid -->
+            <div id="albumGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. Automatic Soil Watering System -->
+                <div id="proj-1" class="album-item photo-card cursor-pointer group" data-category="projects" onclick="openModal('proj-1')">
+                    <div class="paper-grain p-4 rounded-organic-1 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape absolute -top-2.5 right-6 px-4 py-0.5 text-[10px] font-mono text-mossGreen font-bold">PROJECT #01</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="irrigation.jpeg" alt="Automatic Soil Watering System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-terracotta font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Electronics & MATLAB &bull; 3 Photos</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">Automatic Soil Watering System</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Developed an automated plant watering device utilizing a real-time soil moisture voltage feedback sensor, microcontroller integration, and MATLAB data to optimize water delivery for dry soil through a connected water-pump.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">Voltage Sensor &bull; MATLAB</span>
+                            <span class="font-bold text-terracotta flex items-center gap-1 hover:underline">View Slideshow <i class="fa-solid fa-images text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Desk Study Assistant Robot -->
+                <div id="proj-2" class="album-item photo-card cursor-pointer group" data-category="projects" onclick="openModal('proj-2')">
+                    <div class="paper-grain p-4 rounded-organic-2 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape-right absolute -top-2.5 left-6 px-4 py-0.5 text-[10px] font-mono text-terracotta font-bold">PROJECT #02</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="deskbot5.jpeg" alt="Desk Study Robot Physical Build" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-mossGreen font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Robotics &bull; 5 Photos</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">Desk Study Assistant Robot (IO Project)</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Developed an interactive companion deskbot with team utilizing M5 microcontroller programming, ultrasonic sensor-based movement, and proximity-based productivity timers and tasks, housed in a custom 3D-printed chassis modeled in Tinkercad. Its name was IO - "Implementation Officer".
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">Tinkercad &bull; Mechatronics</span>
+                            <span class="font-bold text-mossGreen flex items-center gap-1 hover:underline">View Gallery <i class="fa-solid fa-images text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. CEL Bridge Building Champions -->
+                <div id="comp-2" class="album-item photo-card cursor-pointer group" data-category="competitions" onclick="openModal('comp-2')">
+                    <div class="paper-grain p-4 rounded-organic-1 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape absolute -top-2.5 right-6 px-4 py-0.5 text-[10px] font-mono text-mossGreen font-bold">PROJECT #03</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="bridge1.jpeg" alt="CEL Bridge Building Winner" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-terracotta font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">CEL Champions &bull; Multi-Photo</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">CEL Bridge Building Team Champions</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Designed and fabricated a winning team structural bridge utilizing a modified Howe-Pratt truss design and self-tensioning end-strings to stabilize center strength, achieving an ultimate load capacity of 88.5 kg. Precisely measured cut and glued balsa sticks, and modeled using stress modeling tool for beginners before ending off with technical presentation and demo.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">88.5 kg Capacity &bull; Pitch Winner</span>
+                            <span class="font-bold text-terracotta flex items-center gap-1 hover:underline">View Slideshow <i class="fa-solid fa-images text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Space Robotics Competition Winners -->
+                <div id="comp-1" class="album-item photo-card cursor-pointer group" data-category="competitions" onclick="openModal('comp-1')">
+                    <div class="paper-grain p-4 rounded-organic-2 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape-right absolute -top-2.5 left-6 px-4 py-0.5 text-[10px] font-mono text-terracotta font-bold">PROJECT #04</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="robotics.jpeg" alt="Space Robotics Winners" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-mossGreen font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Design Award ($100 Prize)</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">Space Robotics Team Competition Winners</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Won 1st Place ($100 prize) in the Lassonde Space Robotics Competition by team engineering a Ned2 LabBot rover system from scratch without prior instructions. Independently programmed and executed 5 high-precision mobility tasks meeting strict tolerances under 0.1mm.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">1st Place &bull; $100 Won</span>
+                            <span class="font-bold text-mossGreen flex items-center gap-1 hover:underline">View Award <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Concrete Canoe Team -->
+                <div id="club-1" class="album-item photo-card cursor-pointer group" data-category="clubs" onclick="openModal('club-1')">
+                    <div class="paper-grain p-4 rounded-organic-1 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape absolute -top-2.5 right-6 px-4 py-0.5 text-[10px] font-mono text-mossGreen font-bold">CLUB MEMBER</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-white mb-4 border border-borderWarm/60 p-4 flex items-center justify-center">
+                                <img src="concretecanoe.jpeg" alt="York University Concrete Canoe Logo" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-terracotta font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">YorkU Concrete Canoe</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">York University Concrete Canoe Team</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Formulated lightweight concrete mixes, sized aggregates, and built precision hull molds through structural batch testing for CSCE design specs.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">Concrete Batching &bull; CSCE</span>
+                            <span class="font-bold text-terracotta flex items-center gap-1 hover:underline">View Details <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. 3-Year Youth Coordinator -->
+                <div id="vol-1" class="album-item photo-card cursor-pointer group" data-category="volunteering" onclick="openModal('vol-1')">
+                    <div class="paper-grain p-4 rounded-organic-2 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape-right absolute -top-2.5 left-6 px-4 py-0.5 text-[10px] font-mono text-terracotta font-bold">3 YEARS LEADERSHIP</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="youth2.jpeg" alt="Youth Coordinator Team" class="w-full h-full object-cover object-[center_15%] transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-mossGreen font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Nazim Atfal &bull; 6 Photos</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">3-Year Youth Coordinator (Nazim Atfal)</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Mentored 30+ youth through weekly skill building & public speaking workshops, and sports tournaments. Coordinated charity food drives and directed activities of annual regional youth conventions, managing event operations and team logistics.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">Mentorship &bull; Youth Leadership</span>
+                            <span class="font-bold text-mossGreen flex items-center gap-1 hover:underline">View Slideshow <i class="fa-solid fa-images text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. RFID Security Access System -->
+                <div id="proj-3" class="album-item photo-card cursor-pointer group" data-category="projects" onclick="openModal('proj-3')">
+                    <div class="paper-grain p-4 rounded-organic-1 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape absolute -top-2.5 right-6 px-4 py-0.5 text-[10px] font-mono text-mossGreen font-bold">1ST PLACE FINALIST</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="RFID1.jpeg" alt="RFID Security Access System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-terracotta font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Embedded & GUI &bull; 3 Photos</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">RFID Security & Access Control System</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Prototyped an access control gate using an Arduino Uno R3, RFID tags, and servo latch actuation. Built custom breadboard circuitry, an LCD status screen, and a desktop GUI dashboard for real-time access monitoring.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">RFID &bull; Servo &bull; GUI Dashboard</span>
+                            <span class="font-bold text-terracotta flex items-center gap-1 hover:underline">View Slideshow <i class="fa-solid fa-images text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Carpentry and Construction (Local 27) -->
+                <div id="work-1" class="album-item photo-card cursor-pointer group" data-category="work" onclick="openModal('work-1')">
+                    <div class="paper-grain p-4 rounded-organic-1 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape absolute -top-2.5 right-6 px-4 py-0.5 text-[10px] font-mono text-mossGreen font-bold">LOCAL 27 MEMBER</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="stair.jpeg" alt="Carpentry and Construction" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-terracotta font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Nearly 2 Yrs Exp &bull; 3 Photos</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">Carpentry and Construction (Local 27)</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Nearly 2 years of hands-on ICI trade experience: mass timber cutting, window buck framing, pool stair concrete forming, interior office layout, wall partitions, and scaffolding training.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">Mass Timber &bull; Scaffolding &bull; Forms</span>
+                            <span class="font-bold text-terracotta flex items-center gap-1 hover:underline">View Slideshow <i class="fa-solid fa-images text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Food Prep Crew Lead & General Volunteering -->
+                <div id="vol-2" class="album-item photo-card cursor-pointer group" data-category="volunteering" onclick="openModal('vol-2')">
+                    <div class="paper-grain p-4 rounded-organic-2 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape-right absolute -top-2.5 left-6 px-4 py-0.5 text-[10px] font-mono text-terracotta font-bold">1,000+ HOURS</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80" alt="General Community Volunteering" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-mossGreen font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Community Logistics</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">Food Prep Crew Lead & General Volunteering</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Led a 20+ volunteer team handling safe outdoor food preparation, venue setup, stall logistics, site beautification, and charity drive operations.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">Food Drives &bull; Science Fairs</span>
+                            <span class="font-bold text-mossGreen flex items-center gap-1 hover:underline">View Details <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Isometric Hand Drafting -->
+                <div id="proj-4" class="album-item photo-card cursor-pointer group" data-category="work" onclick="openModal('proj-4')">
+                    <div class="paper-grain p-4 rounded-organic-2 border border-borderWarm relative flex flex-col h-full justify-between">
+                        <div class="washi-tape-right absolute -top-2.5 left-6 px-4 py-0.5 text-[10px] font-mono text-terracotta font-bold">HONOURABLE MENTION</div>
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-linenBg mb-4 border border-borderWarm/60">
+                                <img src="drafting1.jpeg" alt="Isometric Hand Drafting Layouts" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <span class="absolute top-2.5 left-2.5 bg-linenCard/90 backdrop-blur-sm text-mossGreen font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-borderWarm">Drafting &bull; Multi-Photo</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoalText group-hover:text-terracotta transition-colors">Isometric Hand Drafting & Technical Layouts</h3>
+                            <p class="text-xs text-charcoalText/75 mt-1.5 line-clamp-3">
+                                Created technical hand drawings with T-squares and drafting tools—covering 3D isometric views, orthographic projections, line weights, and construction site ground layouts/templates.
+                            </p>
+                        </div>
+                        <div class="pt-3 mt-4 border-t border-borderWarm/60 flex items-center justify-between text-xs">
+                            <span class="font-mono text-[10px] text-mossGreen font-bold">Isometric Layout &bull; Geometry</span>
+                            <span class="font-bold text-mossGreen flex items-center gap-1 hover:underline">View Slideshow <i class="fa-solid fa-images text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS & CERTIFICATIONS MATRIX -->
+        <section id="skills" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="paper-grain p-8 rounded-organic-1 border border-borderWarm">
+                <div class="text-center max-w-2xl mx-auto mb-8 flex flex-col items-center">
+                    <span class="font-mono text-xs font-bold uppercase tracking-widest text-terracotta block">&bull; Qualifications & Skills &bull;</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-shine-sec-2 mt-1">Licenses, Safety Tickets & Software</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Column 1: Licenses & Safety Tickets -->
+                    <div class="space-y-3 bg-white p-5 rounded-organic-2 border border-borderWarm">
+                        <h3 class="font-serif font-bold text-sm text-mossGreen border-b border-borderWarm pb-1.5 flex items-center gap-2">
+                            <i class="fa-solid fa-id-card text-terracotta"></i> Licenses & Health & Safety Tickets
+                        </h3>
+                        <div class="flex flex-wrap gap-1.5 text-xs">
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">CPR C & First Aid</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Full G Driver's License + Vehicle Access</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Working at Heights</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Drone Pilot Basic (Exp Oct)</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Drone Multispectral Mapping (Exp Nov)</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Own All Site PPE</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Local 27 Union Member</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Confined Spaces Safety</span>
+                            <span class="px-2.5 py-1 bg-terracotta/10 text-terracotta border border-terracotta/20 rounded-full font-bold">& More To Come</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Engineering Software & Tools -->
+                    <div class="space-y-3 bg-white p-5 rounded-organic-1 border border-borderWarm">
+                        <h3 class="font-serif font-bold text-sm text-mossGreen border-b border-borderWarm pb-1.5 flex items-center gap-2">
+                            <i class="fa-solid fa-laptop-code text-mossGreen"></i> Engineering Software & Tools
+                        </h3>
+                        <div class="flex flex-wrap gap-1.5 text-xs">
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">AutoCAD</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Microsoft Office Suite</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Tinkercad</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">MATLAB</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Civil 3D</span>
+                            <span class="px-2.5 py-1 bg-mossGreen/10 text-mossGreen border border-mossGreen/20 rounded-full font-bold">& More To Come</span>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Coursework & Core Competencies -->
+                    <div class="space-y-3 bg-white p-5 rounded-organic-2 border border-borderWarm">
+                        <h3 class="font-serif font-bold text-sm text-mossGreen border-b border-borderWarm pb-1.5 flex items-center gap-2">
+                            <i class="fa-solid fa-book-bookmark text-terracotta"></i> Coursework & Core Competencies
+                        </h3>
+                        <div class="flex flex-wrap gap-1.5 text-xs">
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Multivariable Calculus</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Engineering Statistics</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Engineering Materials Design</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Engineering Economics</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Project Management</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Fluid Mechanics</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Mechanics of Materials</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Stress-Strain Modelling</span>
+                            <span class="px-2.5 py-1 bg-linenBg border border-borderWarm rounded-full font-semibold">Isometric/Orthographic CAD & Hand Drafting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CLEAN & HUMBLE SIGN-OFF FOOTER -->
+    <footer class="py-10 bg-white border-t border-borderWarm text-center text-xs text-charcoalText/80">
+        <div class="max-w-4xl mx-auto px-4 space-y-3">
+            <h3 class="font-serif font-bold text-base text-mossGreen">Faraz Ahmad</h3>
+            <p class="text-charcoalText/70 max-w-lg mx-auto">
+                Thanks for checking out my portfolio! Always open to connecting with peers, mentors, and civil engineering professionals.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <a href="mailto:faraz04@my.yorku.ca" class="px-3.5 py-1.5 rounded-full bg-linenBg hover:bg-sageLight text-terracotta font-bold border border-borderWarm transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope"></i> faraz04@my.yorku.ca
+                </a>
+                <a href="https://bit.ly/farazahmad" target="_blank" rel="noopener" class="px-3.5 py-1.5 rounded-full bg-linenBg hover:bg-sageLight text-mossGreen font-bold border border-borderWarm transition-all flex items-center gap-1.5">
+                    <i class="fa-brands fa-linkedin text-[#0A66C2]"></i> bit.ly/farazahmad
+                </a>
+            </div>
+            <p class="text-[11px] text-charcoalText/50 pt-4 border-t border-borderWarm/40 mt-4">&copy; 2026 Faraz Ahmad &bull; Built with HTML & Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <!-- POP-UP MODAL -->
+    <div id="itemModal" class="fixed inset-0 z-50 bg-charcoalText/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-linenCard rounded-organic-1 border border-borderWarm shadow-2xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="p-4 border-b border-borderWarm flex items-center justify-between bg-white shrink-0">
+                <div class="flex items-center gap-2">
+                    <h3 id="modalTitle" class="font-serif text-lg font-bold text-charcoalText">Activity Details</h3>
+                    <span id="slideCounter" class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sageLight text-mossGreen font-bold">1 / 1</span>
+                </div>
+                <button onclick="closeModal()" class="text-charcoalText/60 hover:text-charcoalText text-lg px-2 py-1"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="p-5 overflow-y-auto space-y-4 text-xs">
+                <!-- Interactive Main Image View -->
+                <div class="relative aspect-video bg-linenBg rounded-xl overflow-hidden border border-borderWarm group">
+                    <img id="modalImg" src="" alt="Preview" loading="eager" decoding="async" class="w-full h-full object-cover">
+                    
+                    <!-- Left Arrow -->
+                    <button id="prevBtn" onclick="changeSlide(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-charcoalText flex items-center justify-center shadow-md transition-all">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <!-- Right Arrow -->
+                    <button id="nextBtn" onclick="changeSlide(1)" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-charcoalText flex items-center justify-center shadow-md transition-all">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Thumbnail Navigation Bar -->
+                <div id="thumbBar" class="flex items-center justify-center gap-2 overflow-x-auto py-1">
+                    <!-- Dynamic Thumbnails inserted via JavaScript -->
+                </div>
+
+                <p id="modalDesc" class="text-xs sm:text-sm leading-relaxed text-charcoalText/90">Summary details...</p>
+            </div>
+
+            <div class="p-3 border-t border-borderWarm bg-white flex justify-end shrink-0">
+                <button onclick="closeModal()" class="px-5 py-1.5 bg-linenBg hover:bg-sageLight border border-borderWarm rounded-full text-xs font-bold transition-all">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT LOGIC -->
+    <script>
+        const itemData = {
+            'proj-1': { 
+                title: 'Automatic Soil Watering System', 
+                desc: 'Developed an automated plant watering device utilizing a real-time soil moisture voltage feedback sensor, microcontroller integration, and MATLAB data to optimize water delivery for dry soil through a connected water-pump.', 
+                images: ['irrigation.jpeg', 'irrigation2.jpeg', 'irrigation3.jpeg'] 
+            },
+            'proj-2': { 
+                title: 'Desk Study Assistant Robot (IO Project)', 
+                desc: 'Developed an interactive companion deskbot with team utilizing M5 microcontroller programming, ultrasonic sensor-based movement, and proximity-based productivity timers and tasks, housed in a custom 3D-printed chassis modeled in Tinkercad. Its name was IO - "Implementation Officer".', 
+                images: ['deskbot1.jpeg', 'deskbot2.jpeg', 'deskbot3.jpeg', 'deskbot4.jpeg', 'deskbot5.jpeg'] 
+            },
+            'proj-3': { 
+                title: 'RFID Security & Access Control System', 
+                desc: 'Prototyped an access control gate using an Arduino Uno R3, RFID tags, and servo latch actuation. Built custom breadboard circuitry, an LCD status screen, and a desktop GUI dashboard for real-time access monitoring.', 
+                images: ['RFID1.jpeg', 'RFID2.jpeg', 'RFID3.jpeg'] 
+            },
+            'proj-4': { 
+                title: 'Isometric Hand Drafting & Technical Layouts', 
+                desc: 'Created technical hand drawings with T-squares and drafting tools—covering 3D isometric views, orthographic projections, line weights, and construction site ground layouts/templates.', 
+                images: ['drafting1.jpeg', 'drafting2.jpeg'] 
+            },
+            'club-1': { 
+                title: 'York University Concrete Canoe Team', 
+                desc: 'Formulated lightweight concrete mixes, sized aggregates, and built precision hull molds through structural batch testing for CSCE design specs.', 
+                images: ['concretecanoe.jpeg'] 
+            },
+            'vol-1': { 
+                title: '3-Year Youth Coordinator (Nazim Atfal)', 
+                desc: 'Mentored 30+ youth through weekly skill building & public speaking workshops, and sports tournaments. Coordinated charity food drives and directed activities of annual regional youth conventions, managing event operations and team logistics.', 
+                images: ['youth2.jpeg', 'youth2new.jpeg', 'youth4.jpeg', 'youth5.jpeg', 'youth6.jpeg', 'youth3.jpeg'] 
+            },
+            'comp-1': { 
+                title: 'Space Robotics Competition Winners (1st Place)', 
+                desc: 'Won 1st Place ($100 prize) in the Lassonde Space Robotics Competition by team engineering a Ned2 LabBot rover system from scratch without prior instructions. Independently programmed and executed 5 high-precision mobility tasks meeting strict tolerances under 0.1mm.', 
+                images: ['robotics.jpeg'] 
+            },
+            'comp-2': { 
+                title: 'CEL Bridge Building Team Champions (88.5 kg)', 
+                desc: 'Designed and fabricated a winning team structural bridge utilizing a modified Howe-Pratt truss design and self-tensioning end-strings to stabilize center strength, achieving an ultimate load capacity of 88.5 kg. Precisely measured cut and glued balsa sticks, and modeled using stress modeling tool for beginners before ending off with technical presentation and demo.', 
+                images: ['bridge1.jpeg', 'bridge2.jpeg'] 
+            },
+            'vol-2': { 
+                title: 'Food Prep Crew Lead & General Volunteering', 
+                desc: 'Led a 20+ volunteer team handling safe outdoor food preparation, venue setup, stall logistics, site beautification, and charity drive operations.', 
+                images: ['https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80'] 
+            },
+            'work-1': { 
+                title: 'Carpentry and Construction (Local 27)', 
+                desc: 'Nearly 2 years of hands-on ICI trade experience: mass timber cutting, window buck framing, pool stair concrete forming, interior office layout, wall partitions, and scaffolding training.', 
+                images: ['stair.jpeg', 'scaffolding.jpeg', 'masstimber.jpeg'] 
+            }
+        };
+
+        const categoryOrder = {
+            'all': ['proj-1', 'proj-2', 'comp-2', 'comp-1', 'club-1', 'vol-1', 'proj-3', 'work-1', 'vol-2', 'proj-4'],
+            'projects': ['proj-1', 'proj-2', 'proj-3'],
+            'clubs': ['club-1'],
+            'competitions': ['comp-2', 'comp-1'],
+            'volunteering': ['vol-1', 'vol-2'],
+            'work': ['work-1', 'proj-4']
+        };
+
+        let currentImages = [];
+        let currentSlideIndex = 0;
+        let slideTimer = null;
+
+        function filterCategory(cat) {
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.getAttribute('data-cat') === cat);
+            });
+
+            const grid = document.getElementById('albumGrid');
+            const targetIds = categoryOrder[cat] || [];
+
+            document.querySelectorAll('.album-item').forEach(item => {
+                item.style.display = 'none';
+            });
+
+            targetIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.style.display = 'block';
+                    grid.appendChild(el);
+                }
+            });
+        }
+
+        function openModal(id) {
+            const data = itemData[id];
+            if(!data) return;
+
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalDesc').textContent = data.desc;
+
+            currentImages = data.images || [];
+            currentSlideIndex = 0;
+
+            const thumbBar = document.getElementById('thumbBar');
+            thumbBar.innerHTML = '';
+
+            if (currentImages.length > 1) {
+                document.getElementById('prevBtn').classList.remove('hidden');
+                document.getElementById('nextBtn').classList.remove('hidden');
+                
+                currentImages.forEach((imgUrl, idx) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = imgUrl;
+                    thumb.loading = 'lazy';
+                    thumb.decoding = 'async';
+                    thumb.className = `w-12 h-10 object-cover rounded-md border-2 border-transparent cursor-pointer opacity-60 hover:opacity-100 transition-all ${idx === 0 ? 'thumb-active' : ''}`;
+                    thumb.onclick = () => goToSlide(idx);
+                    thumbBar.appendChild(thumb);
+                });
+            } else {
+                document.getElementById('prevBtn').classList.add('hidden');
+                document.getElementById('nextBtn').classList.add('hidden');
+            }
+
+            renderSlide(false);
+            document.getElementById('itemModal').classList.remove('hidden');
+            startTimer();
+        }
+
+        function renderSlide(animate = true) {
+            if (currentImages.length === 0) return;
+            const modalImg = document.getElementById('modalImg');
+            
+            if (animate) {
+                modalImg.style.transition = 'opacity 0.25s ease-in-out';
+                modalImg.style.opacity = '0.4';
+                setTimeout(() => {
+                    modalImg.src = currentImages[currentSlideIndex];
+                    modalImg.style.opacity = '1';
+                }, 120);
+            } else {
+                modalImg.style.transition = 'none';
+                modalImg.style.opacity = '1';
+                modalImg.src = currentImages[currentSlideIndex];
+            }
+
+            document.getElementById('slideCounter').textContent = `${currentSlideIndex + 1} / ${currentImages.length}`;
+
+            const thumbs = document.querySelectorAll('#thumbBar img');
+            thumbs.forEach((t, i) => {
+                if (i === currentSlideIndex) {
+                    t.classList.add('thumb-active');
+                } else {
+                    t.classList.remove('thumb-active');
+                }
+            });
+        }
+
+        function changeSlide(direction) {
+            if (currentImages.length <= 1) return;
+            currentSlideIndex = (currentSlideIndex + direction + currentImages.length) % currentImages.length;
+            renderSlide(true);
+            resetTimer();
+        }
+
+        function goToSlide(idx) {
+            currentSlideIndex = idx;
+            renderSlide(true);
+            resetTimer();
+        }
+
+        function startTimer() {
+            stopTimer();
+            if (currentImages.length > 1) {
+                slideTimer = setInterval(() => {
+                    currentSlideIndex = (currentSlideIndex + 1) % currentImages.length;
+                    renderSlide(true);
+                }, 3000);
+            }
+        }
+
+        function resetTimer() {
+            startTimer();
+        }
+
+        function stopTimer() {
+            if (slideTimer) {
+                clearInterval(slideTimer);
+                slideTimer = null;
+            }
+        }
+
+        function closeModal() {
+            stopTimer();
+            document.getElementById('itemModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
